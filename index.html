@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Purple Blossom — Home</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="logo" href="#">🌸 <strong>The</strong> Purple Blossom</a>
+
+    <nav class="navbar" id="navbar">
+      <a href="#home">Home</a>
+      <a href="#products">Flowers</a>
+      <a href="#about">About</a>
+      <a href="#newsletter">Subscribe</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="header-icons">
+      <button id="searchBtn" class="icon-btn" title="Search"><i class="fas fa-search"></i></button>
+      <a href="cart.html" class="icon-btn" title="Cart"><i class="fas fa-shopping-cart"></i><span id="cartCount" class="cart-count">0</span></a>
+      <button id="loginBtn" class="icon-btn" title="Account"><i class="fas fa-user"></i></button>
+      <button id="darkModeToggle" class="icon-btn" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+      <button id="menuBtn" class="icon-btn menu-toggle" title="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <!-- Login Popup -->
+  <div class="overlay" id="loginPopup" aria-hidden="true">
+    <div class="modal">
+      <button class="close" id="closeLogin" aria-label="Close login">&times;</button>
+      <h2>Welcome Back 🌷</h2>
+      <input id="loginEmail" type="email" placeholder="Email">
+      <input id="loginPass" type="password" placeholder="Password">
+      <button id="doLogin" class="btn-primary">Login</button>
+    </div>
+  </div>
+
+  <!-- Newsletter Popup (Join Community) - will show only once unless storage cleared -->
+  <div class="overlay" id="newsletterPopup" aria-hidden="true">
+    <div class="modal">
+      <button class="close" id="closeNewsletter" aria-label="Close newsletter">&times;</button>
+      <h2>Join Our Flower Community 🌸</h2>
+      <p>Get exclusive discounts and new collection updates.</p>
+      <input id="newsletterEmail" type="email" placeholder="Enter your email">
+      <button id="subscribeNewsletter" class="btn-primary">Subscribe</button>
+    </div>
+  </div>
+
+  <!-- Product Modal (VIEW / EYE) -->
+  <div class="overlay" id="productModal" aria-hidden="true">
+    <div class="modal product-modal" role="dialog" aria-modal="true">
+      <button class="close" id="closeProductModal" aria-label="Close product">&times;</button>
+      <div class="product-modal-inner">
+        <div class="product-modal-left">
+          <img id="modalImage" src="" alt="product image">
+        </div>
+        <div class="product-modal-right">
+          <h2 id="modalName">Product Name</h2>
+          <p id="modalPrice" class="price">₱0</p>
+          <p id="modalDesc" class="description">Product description...</p>
+          <h4>Meaning in life & love</h4>
+          <p id="modalMeaning" class="meaning">Meaning text...</p>
+
+          <div class="modal-actions">
+            <button id="modalFav" class="btn-outline">🤍 Favorite</button>
+            <button id="modalAddCart" class="btn-primary">Add to Cart 🛒</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- HOME -->
+    <section class="home" id="home">
+      <div class="parallax-bg"></div>
+      <div class="home-content">
+        <h1>Blossom Into Beauty</h1>
+        <p>Soft pastel bouquets crafted with love. Perfect for every occasion.</p>
+        <a href="#products" class="btn">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- ABOUT (The Purple Blossom) -->
+<section class="about" id="about">
+  <div class="about-inner">
+
+    <!-- LEFT BLURRED PURPLE BACKGROUND IMAGE -->
+    <div class="about-left"></div>
+
+    <!-- RIGHT TEXT CONTENT -->
+    <div class="about-right">
+      <h2>The Purple Blossom — Our Story</h2>
+
+      <p class="lead">
+        Born in a small backyard greenhouse, The Purple Blossom began as a weekend hobby that bloomed into a purpose: 
+        to bring gentle beauty and calm into people's lives using the language of flowers.
+      </p>
+
+      <p>
+        <strong>Origin:</strong>  
+        The shop began when our founder, Mira, cultivated a patch of rare purple varieties. 
+        Neighbors fell in love with her bouquets and soon asked her to craft arrangements for celebrations 
+        and quiet moments alike.
+      </p>
+
+      <p>
+        <strong>Mission:</strong>  
+        To create handcrafted bouquets that celebrate tenderness, connection, and thoughtful living. 
+        Each arrangement is ethically sourced, hand-tied, and sent with a meaningful note.
+      </p>
+
+      <p>
+        <strong>Why purple?</strong>  
+        Purple symbolizes grace, mystery, and devotion. Our collections use shades of lavender, mauve, and violet 
+        to convey calm, admiration and timeless romance. That purple, being the last color in the rainbow spectrum, signifies that they will love and trust each other for a long, long time. 
+      </p>
+
+      <p>
+        <strong>In life & love:</strong>  
+        Flowers are reminders — of care, of memory, of courage. We design bouquets to be keepsakes, 
+        small acts of beauty that make everyday moments feel special.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+      <h2 class="heading">Featured Flowers</h2>
+      <div class="product-container" id="productContainer">
+        <!-- product cards are injected by script.js -->
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SECTION (footer subscription) -->
+    <section class="newsletter" id="newsletter">
+      <h2>Join Our Floral Community</h2>
+      <p>Get updates on new flowers, discounts & more!</p>
+      <div class="newsletter-box">
+        <input id="newsletterFooterEmail" type="email" placeholder="Enter your email">
+        <button id="newsletterFooterBtn" class="btn">Subscribe</button>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM (FIXED) -->
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div id="contactFormWrapper">
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+      <div class="footer-container">
+        <div class="footer-box">
+          <h3>🌸 The Purple Blossom</h3>
+          <p>Pastel flowers crafted for beauty & bliss.</p>
+        </div>
+
+        <div class="footer-box">
+          <h3>Quick Links</h3>
+          <a href="#home">Home</a>
+          <a href="#products">Flowers</a>
+          <a href="product.html">Product Page</a>
+          <a href="cart.html">Cart Page</a>
+        </div>
+
+        <div class="footer-box">
+          <h3>Follow Us</h3>
+          <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+          <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+          <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </div>
+      </div>
+      <p class="copyright">© 2025 The Purple Blossom — All Rights Reserved.</p>
+    </footer>
+  </main>
+
+  <div class="petal-container" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
